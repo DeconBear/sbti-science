@@ -1,6 +1,26 @@
 // ============================================================
-// SBTI 科研版 — 人格类型定义 & 题库
+// SBTI 科研学术版 — 版本元数据 & 人格类型 & 题库
 // ============================================================
+
+const VERSION = {
+  id: 'research',
+  name: '科研学术版',
+  icon: '🔬',
+  tagline: 'MBTI 已经过时了。<br>用 <strong>31 道题</strong>，测出你的<br><span class="highlight">真实科研人格</span>。',
+  strengthLabel: '学术超能力',
+  weaknessLabel: '学术软肋',
+  resultHeading: '你的科研人格成分',
+  watermark: 'SBTI · 科研学术版',
+  shareTitle: '我的 SBTI 科研人格',
+  shareText: '我是「{name}」！来测测你的科研人格？',
+  resultDisclaimer: 'SBTI (Science & Bullshit Type Indicator) 科研学术版<br>纯属娱乐恶搞，无任何科学依据<br>同一个人测两次可能有不同结果<br>祝你科研顺利，paper 多多！',
+  disclaimers: [
+    '⚠️ 纯属娱乐，无任何科学依据',
+    '⏱ 约 5-8 分钟 · 31 道选择题',
+    '🤝 结果可截图分享至社交媒体'
+  ],
+  footer: '基于 <span class="strike">大规模数据分析</span> 纯粹主观臆断<br>本测试仅供娱乐，禁止商业用途'
+};
 
 const PERSONALITIES = [
   {

@@ -123,41 +123,30 @@ body {
 .page.page-static { animation: none; }
 
 /* ============================================================
-   HOME PAGE
+   ENTRY PAGE — 版本选择入口
    ============================================================ */
-.home-page {
+.entry-page {
   display: flex;
   flex-direction: column;
   justify-content: center;
   min-height: calc(100vh - 32px);
-  text-align: center;
   padding: 32px 0;
 }
-
-.home-content {
+.entry-content {
   display: flex;
   flex-direction: column;
   gap: 24px;
   align-items: center;
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
 }
 
-/* Logo */
-.logo-area {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 4px;
-}
+.entry-header { display: flex; flex-direction: column; align-items: center; gap: 6px; }
 
-.logo-icon {
-  font-size: 52px;
-  animation: softPulse 3.5s ease-in-out infinite;
-  filter: drop-shadow(0 2px 8px rgba(26, 35, 50, 0.1));
-}
+.entry-title { display: flex; flex-direction: column; align-items: center; gap: 2px; }
 
-.home-title { display: flex; flex-direction: column; align-items: center; gap: 2px; }
-
+/* Reuse title-sbti */
 .title-sbti {
   font-family: var(--font-serif);
   font-size: 3.2rem;
@@ -180,102 +169,103 @@ body {
   opacity: 0.5;
 }
 
-.title-sub {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--burgundy);
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
-  margin-top: 4px;
-}
-
-.home-subtitle {
+.entry-subtitle {
   font-size: 0.8rem;
   color: var(--text-muted);
   letter-spacing: 0.12em;
   font-family: var(--font-serif);
   font-style: italic;
 }
-
-/* Tagline */
-.home-tagline {
-  font-size: 1.1rem;
-  line-height: 1.9;
-  color: var(--text);
-  max-width: 380px;
-  padding: 20px 28px;
-  background: var(--card);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
-  border: 1px solid var(--border-light);
+.entry-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-top: 4px;
 }
 
-.home-tagline .highlight {
-  color: var(--burgundy);
-  font-weight: 700;
-  background: linear-gradient(180deg, transparent 55%, rgba(184, 64, 58, 0.12) 55%);
-  padding: 0 6px;
-}
-
-/* Disclaimers */
-.disclaimers {
+/* Version Cards */
+.version-list {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px;
-}
-
-.disclaimer-item {
-  padding: 7px 18px;
-  background: var(--card);
-  border-radius: 50px;
-  border: 1px solid var(--border-light);
-  font-size: 0.78rem;
-  color: var(--text-muted);
-  box-shadow: var(--shadow-xs);
-}
-
-/* Start Button */
-.btn-start {
-  display: inline-flex;
-  align-items: center;
+  flex-direction: column;
   gap: 10px;
-  padding: 17px 52px;
-  font-size: 1.15rem;
-  font-weight: 700;
-  font-family: var(--font-sans);
-  color: #fff;
-  background: var(--navy);
-  border: none;
-  border-radius: 50px;
+  width: 100%;
+}
+.version-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  padding: 16px 18px;
+  background: var(--card);
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius);
   cursor: pointer;
-  transition: all 0.35s var(--ease);
-  box-shadow: 0 6px 24px rgba(30, 58, 76, 0.3);
-  letter-spacing: 0.06em;
-  position: relative;
-  overflow: hidden;
+  transition: all 0.25s var(--ease);
+  text-align: left;
+  font-family: var(--font-sans);
+  box-shadow: var(--shadow-xs);
+  border-left: 4px solid var(--accent);
 }
-.btn-start::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, transparent 40%, rgba(255,255,255,0.12) 50%, transparent 60%);
-  background-size: 200% 200%;
-  animation: shimmer 3s infinite;
+.version-card:hover {
+  transform: translateX(4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent);
 }
-.btn-start:hover {
-  background: var(--navy-light);
-  transform: translateY(-3px);
-  box-shadow: 0 10px 32px rgba(30, 58, 76, 0.4);
-}
-.btn-start:active { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(30, 58, 76, 0.25); }
-.btn-arrow { transition: transform 0.25s var(--ease); font-size: 1.2rem; }
-.btn-start:hover .btn-arrow { transform: translateX(5px); }
+.version-card:active { transform: translateX(2px); }
 
-.home-footer {
-  font-size: 0.7rem;
+.version-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+.version-info {
+  flex: 1;
+  min-width: 0;
+}
+.version-name {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 2px;
+}
+.version-desc {
+  display: block;
+  font-size: 0.75rem;
   color: var(--text-muted);
-  opacity: 0.6;
+  line-height: 1.45;
+}
+.version-arrow {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  transition: transform 0.25s var(--ease);
+}
+.version-card:hover .version-arrow {
+  transform: translateX(4px);
+  color: var(--accent);
+}
+
+/* Entry Notice */
+.entry-notice {
+  padding: 14px 20px;
+  background: #fef9f4;
+  border: 1px solid #f0dcc0;
+  border-radius: var(--radius);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  width: 100%;
+}
+.notice-title {
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 4px;
+  font-size: 0.82rem;
+}
+
+.entry-footer {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  opacity: 0.55;
   line-height: 1.7;
 }
 .strike { text-decoration: line-through; }
@@ -886,13 +876,13 @@ body {
 @media (max-width: 480px) {
   #app { padding: 10px; }
 
-  .home-page { padding: 24px 0; }
-  .home-content { gap: 20px; }
-  .logo-icon { font-size: 42px; }
+  .entry-page { padding: 24px 0; }
+  .entry-content { gap: 20px; }
   .title-sbti { font-size: 2.5rem; }
-  .home-tagline { font-size: 0.95rem; padding: 16px 20px; }
-
-  .btn-start { padding: 15px 44px; font-size: 1rem; }
+  .version-card { padding: 14px 14px; }
+  .version-icon { font-size: 1.6rem; }
+  .version-name { font-size: 0.88rem; }
+  .version-desc { font-size: 0.72rem; }
 
   .question-text { font-size: 0.98rem; padding: 18px 18px; }
   .question-text::before { width: 3px; }
@@ -918,7 +908,8 @@ body {
 
 @media (max-width: 360px) {
   .title-sbti { font-size: 2rem; }
-  .home-tagline { font-size: 0.85rem; }
+  .version-card { padding: 12px 12px; }
+  .version-name { font-size: 0.82rem; }
   .question-text { font-size: 0.88rem; }
   .option-btn { font-size: 0.8rem; padding: 12px 12px 12px 10px; gap: 10px; }
   .option-label { min-width: 28px; height: 28px; font-size: 0.72rem; border-radius: 7px; }

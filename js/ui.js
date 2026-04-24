@@ -1,5 +1,5 @@
 // ============================================================
-// SBTI 科研版 — UI 渲染模块
+// SBTI — UI 渲染模块
 // ============================================================
 
 const UI = (() => {
@@ -8,6 +8,35 @@ const UI = (() => {
   let answers = {};
   let isTransitioning = false;
   let autoAdvanceTimer = null;
+
+  // 所有可用版本（入口页展示用）
+  const VERSIONS = [
+    {
+      id: 'research', name: '科研学术版', icon: '🔬',
+      desc: '测出你的真实科研人格——是文献综述机器、DDL战士还是实验室卷王？',
+      accent: '#1e3a4c'
+    },
+    {
+      id: 'work', name: '职场牛马版', icon: '💼',
+      desc: '你是被OKR支配的PPT纺织工，还是带薪摸鱼的时间管理大师？',
+      accent: '#2d5f6e'
+    },
+    {
+      id: 'parent', name: '年轻家长版', icon: '👶',
+      desc: '鸡娃还是躺平？早教班排队还是散养自由？测测你的育儿人格。',
+      accent: '#7b4b8a'
+    },
+    {
+      id: 'liberalarts', name: '当代文科生版', icon: '📖',
+      desc: '在AI写作时代，文科生的出路在哪里？批判理论还是 prompt engineering？',
+      accent: '#8b5e3c'
+    },
+    {
+      id: 'art', name: '当代艺术生版', icon: '🎨',
+      desc: '当 Stable Diffusion 比你画得快——艺术生的创作焦虑与灵魂坚守。',
+      accent: '#c0573a'
+    }
+  ];
 
   // ---- 工具函数 ----
 
@@ -34,37 +63,38 @@ const UI = (() => {
 
   function renderHome() {
     app.innerHTML = `
-      <div class="page home-page fade-in">
-        <div class="home-content">
-          <div class="logo-area">
-            <div class="logo-icon">🔬</div>
-            <h1 class="home-title">
+      <div class="page entry-page fade-in">
+        <div class="entry-content">
+          <div class="entry-header">
+            <h1 class="entry-title">
               <span class="title-sbti">SBTI</span>
-              <span class="title-sub">科研学术版</span>
             </h1>
-            <p class="home-subtitle">Science & Bullshit Type Indicator</p>
+            <p class="entry-subtitle">Science & Bullshit Type Indicator</p>
+            <p class="entry-desc">选一个版本，用 <strong>31 道题</strong>测出你的隐藏人格</p>
           </div>
 
-          <div class="home-tagline">
-            MBTI 已经过时了。<br>
-            用 <strong>31 道题</strong>，测出你的<br>
-            <span class="highlight">真实科研人格</span>。
+          <div class="version-list">
+            ${VERSIONS.map((v, i) => `
+              <button class="version-card" style="--accent: ${v.accent}; animation: fadeUp 0.5s var(--ease) both; animation-delay: ${i * 0.08}s"
+                      onclick="App.selectVersion('${v.id}')">
+                <span class="version-icon">${v.icon}</span>
+                <div class="version-info">
+                  <span class="version-name">${v.name}</span>
+                  <span class="version-desc">${v.desc}</span>
+                </div>
+                <span class="version-arrow">→</span>
+              </button>
+            `).join('')}
           </div>
 
-          <div class="disclaimers">
-            <div class="disclaimer-item">⚠️ 纯属娱乐，无任何科学依据</div>
-            <div class="disclaimer-item">⏱ 约 5-8 分钟 · 31 道选择题</div>
-            <div class="disclaimer-item">🤝 结果可截图分享至社交媒体</div>
+          <div class="entry-notice">
+            <p class="notice-title">⚠️ 郑重声明</p>
+            <p>本测试<strong>纯属娱乐，无任何科学依据</strong>，不具有任何真实的指导意义。<br>同一个人两次测试可能有不同结果。仅供消遣，请勿当真。</p>
           </div>
 
-          <button class="btn-start" onclick="App.startTest()">
-            开始测试
-            <span class="btn-arrow">→</span>
-          </button>
-
-          <p class="home-footer">
-            基于 <span class="strike">大规模数据分析</span> 纯粹主观臆断<br>
-            本测试仅供娱乐，禁止商业用途
+          <p class="entry-footer">
+            本项目为测试 <strong>DeepSeek V4</strong> 模型编程能力而构建<br>
+            AI 辅助生成 · 内容仅供参考
           </p>
         </div>
       </div>
@@ -221,14 +251,14 @@ const UI = (() => {
               <div class="result-strength">
                 <span class="dual-icon">🦸</span>
                 <div class="dual-content">
-                  <span class="dual-label">学术超能力</span>
+                  <span class="dual-label">${VERSION.strengthLabel}</span>
                   <p>${p.strength}</p>
                 </div>
               </div>
               <div class="result-weakness">
                 <span class="dual-icon">🎭</span>
                 <div class="dual-content">
-                  <span class="dual-label">学术软肋</span>
+                  <span class="dual-label">${VERSION.weaknessLabel}</span>
                   <p>${p.weakness}</p>
                 </div>
               </div>
@@ -241,7 +271,7 @@ const UI = (() => {
           </div>
 
           <div class="result-top3">
-            <h3>你的科研人格成分</h3>
+            <h3>${VERSION.resultHeading}</h3>
             ${top3.map((t, i) => `
               <div class="top3-item" style="animation-delay:${i * 0.2}s">
                 <span class="top3-rank">#${i + 1}</span>
@@ -256,7 +286,7 @@ const UI = (() => {
           </div>
 
           <div class="result-footer">
-            <span class="result-watermark">SBTI · 科研学术版</span>
+            <span class="result-watermark">${VERSION.watermark}</span>
             <span class="result-note">仅供娱乐，请勿当真</span>
           </div>
         </div>
@@ -271,10 +301,7 @@ const UI = (() => {
         </div>
 
         <p class="result-disclaimer">
-          SBTI (Silly Big Type Indicator) 科研学术版<br>
-          纯属娱乐恶搞，无任何科学依据<br>
-          同一个人测两次可能有不同结果<br>
-          祝你科研顺利，paper 多多！
+          ${VERSION.resultDisclaimer}
         </p>
       </div>
     `;
@@ -314,8 +341,8 @@ const UI = (() => {
           canvas.toBlob(blob => {
             const file = new File([blob], 'sbti-result.png', { type: 'image/png' });
             navigator.share({
-              title: '我的 SBTI 科研人格',
-              text: `我是「${result.name}」！来测测你的科研人格？`,
+              title: VERSION.shareTitle,
+              text: VERSION.shareText.replace('{name}', result.name),
               files: [file]
             }).catch(() => showShareModal(url));
           });
