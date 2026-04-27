@@ -518,8 +518,8 @@ const QUESTIONS = [
         scores: { friday_afternoon_slacker: 0.7, overtime_performer: 0.5, email_hoarder: 0.5 }
       },
       C: {
-        text: '大脑缓存已清上下文丢失——盯文档发了五分钟呆决定周一再弄',
-        scores: { friday_afternoon_slacker: 1.0, fish_toucher: 0.5 }
+        text: '二十分钟高效搞定点发送——早干完早消停，然后关电脑下班',
+        scores: { jira_tpm_guru: 0.7, okr_chaser: 0.5, new_hire_gunner: 0.5 }
       }
     }
   },

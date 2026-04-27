@@ -443,11 +443,11 @@ const QUESTIONS = [
       },
       B: {
         text: '引用科普文章据理力争，老人沉默后说你们年轻人就是太教条',
-        scores: { grandparent_diplomat: 0.7, vaccination_scholar: 0.5, parenting_book_hoarder: 0.3 }
+        scores: { vaccination_scholar: 1.0, parenting_book_hoarder: 0.5 }
       },
       C: {
         text: '让步了，孩子满头大汗你心疼但没办法，暗自发誓下次坚持',
-        scores: { grandparent_diplomat: 0.5, parent_burnout: 0.7, self_care_forgotten: 0.3 }
+        scores: { parent_burnout: 1.0, grandparent_diplomat: 0.3 }
       }
     }
   },
@@ -533,11 +533,11 @@ const QUESTIONS = [
       },
       B: {
         text: '解释经济压力精力不够被怼生了就养得起——血压飙升保持礼貌',
-        scores: { second_child_avoider: 0.7, pocket_money_economist: 0.5, mommy_daddy_guilt: 0.3 }
+        scores: { pocket_money_economist: 1.0, second_child_avoider: 0.3 }
       },
       C: {
         text: '被问多了开始怀疑自己，回家和伴侣深夜讨论后以再等等收尾',
-        scores: { second_child_avoider: 0.5, mommy_daddy_guilt: 0.5, sibling_referee: 0.5 }
+        scores: { mommy_daddy_guilt: 0.7, second_child_avoider: 0.5, sibling_referee: 0.3 }
       }
     }
   },
@@ -572,8 +572,8 @@ const QUESTIONS = [
         scores: { vaccination_scholar: 0.7, parenting_book_hoarder: 0.5, mommy_daddy_guilt: 0.3 }
       },
       C: {
-        text: '翻遍AI和育儿博主建议越看越不确定——最后每个都试试',
-        scores: { ai_parenting_assistant: 0.5, parenting_content_collector: 0.7, parenting_book_hoarder: 0.3 }
+        text: '量完体温直接打车去医院——专业的事交给专业的人最安心',
+        scores: { vaccination_scholar: 0.5, early_ed_anxiety: 0.5, sleep_deprived_zombie: 0.3 }
       }
     }
   },

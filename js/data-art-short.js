@@ -437,12 +437,12 @@ const QUESTIONS = [
     text: '评图课挂上画，老师沉默五秒：「这个作品怎么说呢……」你？',
     options: {
       A: {
-        text: '筑起防线——「是个人偏好」「你没懂我的意图」，微笑记笔记',
-        scores: { critique_session_survivor: 1.0, concept_over_technique: 0.5 }
+        text: '认真听建议吸收关键点改进——保留核心表达，其他选择性采纳',
+        scores: { rejection_resilient: 1.0, style_searcher: 0.5 }
       },
       B: {
         text: '认真听完记满笔记逐条改——改完画变四不像傻眼了',
-        scores: { critique_session_survivor: 0.7, portfolio_perfectionist: 0.7, style_searcher: 0.5 }
+        scores: { portfolio_perfectionist: 1.0, critique_session_survivor: 0.5 }
       },
       C: {
         text: '先发制人铺陈「深层概念」。老师：「那为何不用更好形式？」',
@@ -603,12 +603,12 @@ const QUESTIONS = [
         scores: { perspective_struggler: 1.0, tutorial_loop_trap: 0.5 }
       },
       B: {
-        text: '人物画大前景建筑藏后——或换场景，干嘛非画建筑',
-        scores: { perspective_struggler: 0.7, concept_over_technique: 0.5, inktober_quitter: 0.5 }
+        text: '找会透视的朋友手把手教——承认弱项借力不丢人',
+        scores: { style_searcher: 1.0, tutorial_loop_trap: 0.5 }
       },
       C: {
         text: '硬画——画错改改不好重来。逃避解决不了问题正面刚',
-        scores: { style_searcher: 0.5, creative_block_veteran: 0.5, perspective_struggler: 0.5 }
+        scores: { perspective_struggler: 0.7, creative_block_veteran: 0.5, rejection_resilient: 0.3 }
       }
     }
   },
