@@ -364,267 +364,267 @@ const QUESTIONS = [
     text: '论文 deadline 还有两天，你打开空白文档。第一件事是？',
     options: {
       A: {
-        text: '先调好参考文献格式和页边距——正文等一切格式完美了再动手写',
+        text: '调好参考文献格式和页边距再动笔',
         scores: { citation_obsessive: 1.0, note_taking_aesthetic: 0.5 }
       },
       B: {
-        text: '打开微博看大家都在吐槽赶 due——你反而获得了一种奇怪的安心感',
+        text: '刷微博看大家都在赶 due，反而安心了',
         scores: { academic_twitter_addict: 1.0, essay_all_nighter: 0.5, adjunct_anxiety: 0.3 }
       },
       C: {
-        text: '盯着光标想「AI 时代写作的意义是什么」——两小时后只写了日记里的焦虑',
+        text: '盯着光标陷入「AI 时代写作的意义」沉思',
         scores: { ai_writing_crisis: 1.0, critical_theory_addict: 0.5 }
       }
     }
   },
   {
     id: 2,
-    text: '研讨课上，你已把本周阅读想得很深了。你发言了吗？',
+    text: '研讨课上，你对本周阅读想得很深。你发言了吗？',
     options: {
       A: {
-        text: '在心里排练了三遍——终于想开口时，讨论已经翻到下一页了',
+        text: '心里排练三遍，等开口时讨论已翻页',
         scores: { seminar_overthinker: 1.0, close_reading_master: 0.5 }
       },
       B: {
-        text: '举手用「话语构型」和「情动转向」发言——旁边的同学默默打开了词典',
+        text: '举手甩出术语，同学默默打开了词典',
         scores: { theory_jargon_spitter: 1.0, debate_club_veteran: 0.5 }
       },
       C: {
-        text: '仅凭前言和书评，流利发表了一段听起来深度十足的评论——连自己都差点信了',
+        text: '凭前言和书评发表了深度评论，自己都信了',
         scores: { exam_essay_bluffer: 1.0, interdisciplinary_dabbler: 0.5 }
       }
     }
   },
   {
     id: 3,
-    text: '同学用 AI 代写论文得了高分。你内心最真实的反应是？',
+    text: '同学用 AI 代写论文得了高分。你的反应？',
     options: {
       A: {
-        text: 'AI 比我写得好，我读这么多年书的意义何在——深夜搜索「文科生会被取代吗」到三点',
+        text: '深夜搜索「文科生会被取代吗」到三点',
         scores: { ai_writing_crisis: 1.0, humanities_inferiority: 0.5, philosophy_insomniac: 0.5 }
       },
       B: {
-        text: '愤怒但最终沉默了——你写了三百字批判然后删掉，因为觉得说了也没人听',
+        text: '愤怒但沉默——写三百字批判又删了',
         scores: { liberal_arts_defender: 0.7, humanities_inferiority: 0.5 }
       },
       C: {
-        text: '开始偷偷用 AI 润色自己的论文，告诉自己「只是辅助工具，和用词典没区别」',
+        text: '偷偷用 AI 润色，告诉自己只是辅助工具',
         scores: { career_pivot: 0.5, exam_essay_bluffer: 0.5, ai_writing_crisis: 0.3 }
       }
     }
   },
   {
     id: 4,
-    text: '淘到一本八十年代的绝版学术译著，纸张已经泛黄。你第一反应是？',
+    text: '淘到一本八十年代绝版学术译著。你第一反应？',
     options: {
       A: {
-        text: '拍照发朋友圈配文「今日淘到的宝贝」——书摆在显眼位置，至今只读了序言',
+        text: '拍照发朋友圈，摆显眼位置只读序言',
         scores: { book_cafe_aesthetic: 1.0, reading_list_hoarder: 0.5 }
       },
       B: {
-        text: '发现某个关键术语译法有争议——决定写一篇论文讨论翻译如何塑造学术接受',
+        text: '发现术语译法有争议，决定写篇翻译论文',
         scores: { translation_perfectionist: 1.0, close_reading_master: 0.5, linguistic_turn_survivor: 0.3 }
       },
       C: {
-        text: '有点难过——四十年了旧译还在流传，说明这个领域的学术翻译真稀缺',
+        text: '感慨四十年前旧译还在用，翻译太稀缺了',
         scores: { critical_theory_addict: 0.7, public_intellectual_wannabe: 0.5 }
       }
     }
   },
   {
     id: 5,
-    text: '导师建议你去乡镇做两周田野调查，访谈当地居民。你——',
+    text: '导师建议你去乡镇做两周田野调查。你——',
     options: {
       A: {
-        text: '觉得文献没读完就做田野不严谨——其实是害怕和那么多陌生人长时间说话',
+        text: '觉得文献没读完不严谨，其实是怕见人',
         scores: { field_work_avoidant: 1.0, close_reading_master: 0.5 }
       },
       B: {
-        text: '申请了但等学校介绍信等了六周——田野还没去，先体验了官僚制的田野',
+        text: '等学校介绍信等了六周，田野变官僚体验',
         scores: { grad_school_romantic: 1.0, field_work_avoidant: 0.5 }
       },
       C: {
-        text: '带了全套录音设备和精美提纲——第三天手机掉了，在县城修了两天',
+        text: '带全套设备出发，第三天手机掉县城了',
         scores: { note_taking_aesthetic: 0.7, field_work_avoidant: 0.3, history_minutiae: 0.3 }
       }
     }
   },
   {
     id: 6,
-    text: '读符号学导论，从索绪尔读到拉康再读到德里达。你现在——',
+    text: '读符号学，从索绪尔到拉康到德里达。你现在——',
     options: {
       A: {
-        text: '已不确定「意义」这个词有什么意义——上次写不含括号的正面陈述已是大一时候',
+        text: '已不确定「意义」有什么意义了',
         scores: { linguistic_turn_survivor: 1.0, critical_theory_addict: 0.5 }
       },
       B: {
-        text: '觉得需先看法文原著——于是打开多邻国开始学法语，导论停在第五页',
+        text: '觉得必须看法文原著，打开多邻国学法语',
         scores: { language_nerd: 1.0, reading_list_hoarder: 0.5 }
       },
       C: {
-        text: '用符号学框架分析昨晚那部综艺——草稿比你的正课论文写得还多',
+        text: '用符号学分析昨晚的综艺，比正课写得多',
         scores: { critical_theory_addict: 0.5, public_intellectual_wannabe: 0.7 }
       }
     }
   },
   {
     id: 7,
-    text: '论文需要引一段德文文献，而你德语只会查字典。怎么办？',
+    text: '论文需引德文文献，你德语只会查字典。怎么办？',
     options: {
       A: {
-        text: '逐词翻译并查了三本词典——译完附上半页长的翻译选择说明脚注',
+        text: '逐词查三本词典，附半页翻译说明脚注',
         scores: { translation_perfectionist: 1.0, language_nerd: 0.5 }
       },
       B: {
-        text: '诚实引用英译本并在脚注说明依赖二手翻译——不太舒服但至少没硬装',
+        text: '引用英译本并在脚注诚实说明依赖二手',
         scores: { citation_obsessive: 0.5, translation_perfectionist: 0.5, adjunct_anxiety: 0.3 }
       },
       C: {
-        text: '放弃这段换成英文原著——省了三天，但你隐约觉得真正的学者不会这么绕',
+        text: '换成英文原著，省了三天但心里不太踏实',
         scores: { exam_essay_bluffer: 0.5, essay_all_nighter: 0.5 }
       }
     }
   },
   {
     id: 8,
-    text: '理工科朋友说：「你们文科读读书就能毕业，真轻松啊。」你——',
+    text: '理工科朋友说「文科读读书就能毕业真轻松」。你——',
     options: {
       A: {
-        text: '认真解释了一学期阅读量和论文要求——他听完说「我还是回去做实验吧」',
+        text: '解释阅读量和论文字数，他说我还是做实验吧',
         scores: { liberal_arts_defender: 1.0, debate_club_veteran: 0.5 }
       },
       B: {
-        text: '笑着说「对呀我也在自学 Python 准备转行」——说完看着海德格尔的书沉默了',
+        text: '笑着说我也在自学 Python，然后看着书沉默',
         scores: { career_pivot: 1.0, humanities_inferiority: 0.5 }
       },
       C: {
-        text: '引用纽曼和努斯鲍姆论证人文教育的价值——他说「说人话」，你沉默了',
+        text: '引用纽曼和努斯鲍姆论证人文价值，被说听不懂',
         scores: { theory_jargon_spitter: 0.7, liberal_arts_defender: 0.5 }
       }
     }
   },
   {
     id: 9,
-    text: '深夜十一点，明天有论文 deadline。你躺床上没睡着，在想什么？',
+    text: '深夜十一点，明天 deadline。躺床上没睡着在想什么？',
     options: {
       A: {
-        text: '自由意志——如果一切是被决定的，没写完也不是我的错——但教授不会接受这个',
+        text: '自由意志——论文没写完是不是被决定的',
         scores: { philosophy_insomniac: 1.0, critical_theory_addict: 0.3 }
       },
       B: {
-        text: '复盘今天研讨课上的发言——在脑中重来一遍，这次你表现完美，但天快亮了',
+        text: '复盘课堂发言，脑内重来一遍已到天亮',
         scores: { seminar_overthinker: 1.0, essay_all_nighter: 0.5 }
       },
       C: {
-        text: '刷朋友圈看到同学在图书馆通宵——你感到压力但也安心：原来大家都还没写完',
+        text: '刷朋友圈见同学通宵，焦虑但也安心了些',
         scores: { academic_twitter_addict: 0.7, humanities_inferiority: 0.3, essay_all_nighter: 0.3 }
       }
     }
   },
   {
     id: 10,
-    text: '学术会议茶歇，一位知名教授问你在研究什么。你——',
+    text: '会议茶歇，知名教授问你在研究什么。你——',
     options: {
       A: {
-        text: '用排练了三周的三句话精准概括——教授点头走了，你还在心里复盘有没有说错词',
+        text: '用排练三周的三句话精准概括，教授点头走了',
         scores: { seminar_overthinker: 0.7, adjunct_anxiety: 0.5 }
       },
       B: {
-        text: '把跨越四个学科的宏大课题讲了一遍——教授问「这个课题是哪个系的？」',
+        text: '把跨四学科的课题讲一遍，教授问你是哪个系',
         scores: { interdisciplinary_dabbler: 1.0, grad_school_romantic: 0.5 }
       },
       C: {
-        text: '即兴发挥了一段精彩描述——教授给了名片，但你论文才写了三分之一',
+        text: '即兴发挥精彩描述，教授给名片但你论文没写',
         scores: { conference_paper_rusher: 1.0, exam_essay_bluffer: 0.5 }
       }
     }
   },
   {
     id: 11,
-    text: '你立 flag 要完成一部中篇小说。目前的进度是？',
+    text: '你立 flag 要完成一部中篇小说。目前进度？',
     options: {
       A: {
-        text: '文件夹躺着八个精美开头——每次读完大师新作，就删掉旧的再开一个新的',
+        text: '文件夹躺着八个精美开头，见新作就删旧的',
         scores: { literary_writer: 1.0, reading_list_hoarder: 0.5 }
       },
       B: {
-        text: '还没动笔——列了「写小说前必读的五十本书」，两年了读到第七本',
+        text: '列了「写前必读 50 本书」，两年读到第 7 本',
         scores: { reading_list_hoarder: 1.0, literary_writer: 0.5 }
       },
       C: {
-        text: '发到写作社区有人评论「有点意思但模仿痕迹重」——你藏了帖子已改了四个月',
+        text: '被人说「模仿痕迹重」，藏起来改了四个月',
         scores: { seminar_overthinker: 0.7, literary_writer: 0.5 }
       }
     }
   },
   {
     id: 12,
-    text: '为查一个历史细节打开搜索引擎——两个小时后你在做什么？',
+    text: '为查历史细节打开搜索——两小时后你在做什么？',
     options: {
       A: {
-        text: '在读该时期某小贵族的日记——虽然你的论文是关于二十世纪小说的',
+        text: '在读某小贵族日记，虽然论文是二十世纪小说',
         scores: { history_minutiae: 1.0, reading_list_hoarder: 0.5 }
       },
       B: {
-        text: '忘了最初查什么——但现在能把路易十四某顿晚餐的菜品从头到尾背出来',
+        text: '忘了查什么，但能背出路易十四某顿晚餐菜单',
         scores: { history_minutiae: 1.0, book_cafe_aesthetic: 0.3, classics_elitist: 0.3 }
       },
       C: {
-        text: '用一篇二手文献的脚注解决了——交稿后忐忑了两周，怕教授追问细节来源',
+        text: '用二手文献脚注搞定，交稿后忐忑了两周',
         scores: { exam_essay_bluffer: 0.5, conference_paper_rusher: 0.5 }
       }
     }
   },
   {
     id: 13,
-    text: '过年回家亲戚问「文科出来能干嘛？」你的回答是？',
+    text: '过年回家亲戚问「文科出来能干嘛？」你回答？',
     options: {
       A: {
-        text: '「考公考编当老师」——说完低头吃菜，自己也不确定这是选择还是被选择',
+        text: '「考公考编当老师」——低头吃菜不再说话',
         scores: { humanities_inferiority: 1.0, job_market_despair: 0.5 }
       },
       B: {
-        text: '「文科出路很广的……」——背得很流利眼神却看向远处，亲戚已转头聊算法岗',
+        text: '背得流利「出路很广」，亲戚已转头聊算法',
         scores: { job_market_despair: 0.7, humanities_inferiority: 0.5 }
       },
       C: {
-        text: '「我在自学编程，毕业后可能做数据分析」——亲戚眼睛亮了，你心里却更矛盾',
+        text: '「我在自学编程准备转行」，亲戚眼睛亮了',
         scores: { career_pivot: 1.0, humanities_inferiority: 0.5 }
       }
     }
   },
   {
     id: 14,
-    text: '数字人文学者展示了用 Python 分析百万字文本。你的反应是？',
+    text: '数字人文学者展示 Python 分析百万字文本。你反应？',
     options: {
       A: {
-        text: '兴奋——找到了文科和技术结合的路。当晚注册 Python 课，第三次从头开始',
+        text: '兴奋地注册 Python 课，第三次从头开始学',
         scores: { career_pivot: 1.0, ai_writing_crisis: 0.3, conference_paper_rusher: 0.3 }
       },
       B: {
-        text: '担忧量化会窄化阐释深度——举手提问，学者说「你的担忧预设了两者的对立」',
+        text: '担忧量化窄化阐释，学者说你在预设对立',
         scores: { critical_theory_addict: 0.5, liberal_arts_defender: 0.5, linguistic_turn_survivor: 0.3 }
       },
       C: {
-        text: '觉得和微观细读无关——三百万字语料分析无法告诉你某段对话的美学价值',
+        text: '觉得语料分析无法告诉你某段对话的美学价值',
         scores: { close_reading_master: 0.7, classics_elitist: 0.5 }
       }
     }
   },
   {
     id: 15,
-    text: '做完这十五道题，你觉得「当代文科生版 SBTI」——',
+    text: '做完这十五道题，你觉得「文科生版 SBTI」——',
     options: {
       A: {
-        text: '被戳中了——好几个瞬间让你怀疑有摄像头，准备截图发群里和同学们对答案',
+        text: '被戳中好几处，准备截图发群里对答案',
         scores: { academic_twitter_addict: 0.7, humanities_inferiority: 0.3 }
       },
       B: {
-        text: '有趣但不完整——但你也承认简化让你看到了自己的模式，准备截屏发朋友圈',
+        text: '有趣但不完整，但也看到了自己的模式',
         scores: { critical_theory_addict: 0.3, public_intellectual_wannabe: 0.3, grad_school_romantic: 0.3 }
       },
       C: {
-        text: '既好笑又心酸——每个选项背后都是真实焦虑。但 deadline 还在那里等着你',
+        text: '好笑又心酸，但 deadline 还在那里等着你',
         scores: { adjunct_anxiety: 0.5, job_market_despair: 0.5, essay_all_nighter: 0.3 }
       }
     }
