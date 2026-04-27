@@ -191,26 +191,76 @@ body {
 }
 .version-card {
   display: flex;
-  align-items: center;
-  gap: 14px;
+  flex-direction: column;
   width: 100%;
-  padding: 16px 18px;
   background: var(--card);
   border: 1.5px solid var(--border-light);
   border-radius: var(--radius);
   cursor: pointer;
   transition: all 0.25s var(--ease);
-  text-align: left;
   font-family: var(--font-sans);
   box-shadow: var(--shadow-xs);
   border-left: 4px solid var(--accent);
+  overflow: hidden;
 }
 .version-card:hover {
-  transform: translateX(4px);
   box-shadow: var(--shadow-md);
   border-color: var(--accent);
 }
-.version-card:active { transform: translateX(2px); }
+
+.version-card-main {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+}
+.version-card.expanded .version-card-main { padding-bottom: 8px; }
+.version-card.expanded .version-arrow { transform: rotate(90deg); }
+
+/* Sub-buttons (hidden by default) */
+.version-card-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s var(--ease), padding 0.3s var(--ease);
+}
+.version-card.expanded .version-card-options {
+  max-height: 80px;
+  padding: 0 18px 16px;
+}
+
+.version-sub-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 14px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  border: 1.5px solid var(--border-light);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s var(--ease);
+  background: var(--paper);
+  color: var(--text);
+}
+.version-sub-btn:hover {
+  transform: translateY(-1px);
+}
+.version-sub-full:hover {
+  border-color: var(--navy);
+  background: var(--navy);
+  color: #fff;
+}
+.version-sub-short:hover {
+  border-color: var(--burgundy);
+  background: var(--burgundy);
+  color: #fff;
+}
 
 .version-icon {
   font-size: 2rem;
@@ -879,7 +929,7 @@ body {
   .entry-page { padding: 24px 0; }
   .entry-content { gap: 20px; }
   .title-sbti { font-size: 2.5rem; }
-  .version-card { padding: 14px 14px; }
+  .version-card-main { padding: 14px 14px; }
   .version-icon { font-size: 1.6rem; }
   .version-name { font-size: 0.88rem; }
   .version-desc { font-size: 0.72rem; }
@@ -902,16 +952,21 @@ body {
   .result-footer { padding: 14px 20px; }
   .result-actions { flex-direction: column; }
 
+  .version-card-options { padding: 0 14px; gap: 6px; }
+  .version-sub-btn { font-size: 0.76rem; padding: 9px 10px; }
+
   .top3-name { min-width: 70px; font-size: 0.8rem; }
   .share-modal { padding: 20px; }
 }
 
 @media (max-width: 360px) {
   .title-sbti { font-size: 2rem; }
-  .version-card { padding: 12px 12px; }
+  .version-card-main { padding: 12px 12px; }
   .version-name { font-size: 0.82rem; }
   .question-text { font-size: 0.88rem; }
   .option-btn { font-size: 0.8rem; padding: 12px 12px 12px 10px; gap: 10px; }
   .option-label { min-width: 28px; height: 28px; font-size: 0.72rem; border-radius: 7px; }
+  .version-card-options { padding: 0 10px; gap: 4px; }
+  .version-sub-btn { font-size: 0.7rem; padding: 8px 8px; }
   .result-name { font-size: 1.3rem; }
 }

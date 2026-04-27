@@ -52,6 +52,14 @@ const UI = (() => {
     return a;
   }
 
+  function toggleCard(card) {
+    // 关闭其他已展开的卡片
+    document.querySelectorAll('.version-card.expanded').forEach(c => {
+      if (c !== card) c.classList.remove('expanded');
+    });
+    card.classList.toggle('expanded');
+  }
+
   function cancelAutoAdvance() {
     if (autoAdvanceTimer) {
       clearTimeout(autoAdvanceTimer);
@@ -70,20 +78,30 @@ const UI = (() => {
               <span class="title-sbti">SBTI</span>
             </h1>
             <p class="entry-subtitle">Science & Bullshit Type Indicator</p>
-            <p class="entry-desc">选一个版本，用 <strong>31 道题</strong>测出你的隐藏人格</p>
+            <p class="entry-desc">选一个版本，用 <strong>31 或 15 道题</strong>测出你的隐藏人格</p>
           </div>
 
           <div class="version-list">
             ${VERSIONS.map((v, i) => `
-              <button class="version-card" style="--accent: ${v.accent}; animation: fadeUp 0.5s var(--ease) both; animation-delay: ${i * 0.08}s"
-                      onclick="App.selectVersion('${v.id}')">
-                <span class="version-icon">${v.icon}</span>
-                <div class="version-info">
-                  <span class="version-name">${v.name}</span>
-                  <span class="version-desc">${v.desc}</span>
+              <div class="version-card" style="--accent: ${v.accent}; animation: fadeUp 0.5s var(--ease) both; animation-delay: ${i * 0.08}s"
+                   onclick="UI.toggleCard(this)">
+                <div class="version-card-main">
+                  <span class="version-icon">${v.icon}</span>
+                  <div class="version-info">
+                    <span class="version-name">${v.name}</span>
+                    <span class="version-desc">${v.desc}</span>
+                  </div>
+                  <span class="version-arrow">→</span>
                 </div>
-                <span class="version-arrow">→</span>
-              </button>
+                <div class="version-card-options">
+                  <button class="version-sub-btn version-sub-full" onclick="event.stopPropagation(); App.selectVersion('${v.id}', 'full')">
+                    📖 完整版 · 31题
+                  </button>
+                  <button class="version-sub-btn version-sub-short" onclick="event.stopPropagation(); App.selectVersion('${v.id}', 'short')">
+                    ⚡ 精简版 · 15题
+                  </button>
+                </div>
+              </div>
             `).join('')}
           </div>
 
@@ -375,6 +393,6 @@ const UI = (() => {
 
   return {
     renderHome, renderQuestion, selectOption, goToQuestion,
-    renderResult, shareResult, getAnswers
+    renderResult, shareResult, getAnswers, toggleCard
   };
 })();

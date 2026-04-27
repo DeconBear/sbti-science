@@ -5,8 +5,10 @@
 const App = (() => {
   let currentVersionId = null;
 
-  function selectVersion(versionId) {
+  function selectVersion(versionId, length) {
     currentVersionId = versionId;
+    const len = length || 'full';
+    const suffix = len === 'short' ? '-short' : '';
 
     // 清除上一轮的数据（如果存在）
     if (window.VERSION) delete window.VERSION;
@@ -14,7 +16,7 @@ const App = (() => {
     if (window.QUESTIONS) delete window.QUESTIONS;
 
     const script = document.createElement('script');
-    script.src = `js/data-${versionId}.js`;
+    script.src = `js/data-${versionId}${suffix}.js`;
     script.onload = () => {
       startTest();
     };
